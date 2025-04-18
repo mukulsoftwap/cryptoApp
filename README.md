@@ -42,6 +42,8 @@ npm install
 npm run android // android
 npm run ios // IOS
 
-#4 For running on Android you need to have Android SDK installed and JAVA_HOME setup.
+For running on Android you need to have Android SDK installed and JAVA_HOME setup.
 
-#5 For IOS you need to have XCode and Pods install 
+For IOS you need to have XCode and Pods install
+
+you can find APK file in apk folder.
