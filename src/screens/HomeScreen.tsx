@@ -17,7 +17,7 @@ const styles = StyleSheet.create({
   title: { 
     fontSize: 18, 
     fontWeight: 'bold', 
-    padding: 16, 
+    padding: 16,
     color:'#FFF' 
   },
   error: {

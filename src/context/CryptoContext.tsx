@@ -20,17 +20,23 @@ export const CryptoProvider: React.FC<{ children: React.ReactNode }> = ({ childr
   const [cryptoState, dispatch] = useReducer(cryptoReducer, initialState);
 
   useEffect(() => {
-    const fetchData = async () => {
-      const response = await fetch(`${CRYPTO_BASE_URL}&order=market_cap_desc&per_page=12&page=1`);
-      const data: Crypto[] = await response.json();
-      dispatch({ type: 'SET_CRYPTOS', payload: data });
-
-      const favs = await AsyncStorage.getItem('favorites');
-      if (favs) dispatch({ type: 'SET_FAVORITES', payload: JSON.parse(favs) });
-    };
-
     fetchData();
+
+    const interval = setInterval(() => {
+      fetchData();
+    }, 30000);
+
+    return () => clearInterval(interval);
   }, []);
+
+  const fetchData = async () => {
+    const response = await fetch(`${CRYPTO_BASE_URL}&order=market_cap_desc&per_page=12&page=1`);
+    const data: Crypto[] = await response.json();
+    dispatch({ type: 'SET_CRYPTOS', payload: data });
+
+    const favs = await AsyncStorage.getItem('favorites');
+    if (favs) dispatch({ type: 'SET_FAVORITES', payload: JSON.parse(favs) });
+  };
 
   return (
     <CryptoContext.Provider value={{ cryptoState, dispatch }}>

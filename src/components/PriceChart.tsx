@@ -41,7 +41,6 @@ const PriceChart: React.FC = () => {
     } catch (err) {
       setError('Failed to load chart data.');
     } finally {
-        console.log("enter in finally");
       setLoading(false);
     }
   };
