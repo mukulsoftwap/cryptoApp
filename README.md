@@ -9,9 +9,9 @@ A real-time cryptocurrency tracker built with **React + TypeScript**, using the 
 - ✅ View top cryptocurrencies in real-time (auto-updating every 30s)
 - ⭐ Add/remove coins to/from your favorites (saved in LocalStorage)
 - 📈 View historical price chart per coin (7 days)
-- ⚛️ Built with React, Vite, TypeScript, Context API
-- 📊 Chart rendering via `react-chartjs-2`
-- 💾 Persisted favorites with `localStorage`
+- ⚛️ Built with React Native CLI, TypeScript, Context API
+- 📊 Chart rendering via `Victory Native`
+- 💾 Persisted favorites with `AsyncStorage`
 
 ---
 
@@ -19,13 +19,12 @@ A real-time cryptocurrency tracker built with **React + TypeScript**, using the 
 
 | Tool             | Description                             |
 |------------------|-----------------------------------------|
-| React            | Frontend Framework                      |
-| Vite             | Fast build tool                         |
+| React Native     | Cross Platform Mobile Framework         |
 | TypeScript       | Type safety                             |
 | CoinGecko API    | Real-time crypto data                   |
 | Chart.js         | Price history visualization             |
 | Context API      | Global state management (Redux-style)   |
-| LocalStorage     | Persist favorites locally               |
+| AsyncStorage     | Persist favorites locally               |
 
 ---
 
@@ -42,3 +41,7 @@ npm install
 # 3. Start the development server
 npm run android // android
 npm run ios // IOS
+
+#4 For running on Android you need to have Android SDK installed and JAVA_HOME setup.
+
+#5 For IOS you need to have XCode and Pods install 
